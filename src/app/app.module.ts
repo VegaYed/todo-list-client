@@ -10,6 +10,7 @@ import { CategoriasComponent } from './components/other/categorias/categorias.co
 import { NuevaTareaComponent } from './components/other/nueva-tarea/nueva-tarea.component';
 import { ListaTareasComponent } from './components/other/lista-tareas/lista-tareas.component';
 import { InicioComponent } from './components/shared/inicio/inicio.component';
+import { FiltrosComponent } from './components/other/filtros/filtros.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { InicioComponent } from './components/shared/inicio/inicio.component';
     CategoriasComponent,
     NuevaTareaComponent,
     ListaTareasComponent,
-    InicioComponent
+    InicioComponent,
+    FiltrosComponent
   ],
   imports: [
     BrowserModule,
