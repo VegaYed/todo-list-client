@@ -1,0 +1,103 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+    background-color: hsl(hsl(0, 0%, 96%));
+    width: 100vw;
+    height: 100vh;
+}
+
+h1{
+    display: block;
+    margin-top: 2.5%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #707070;
+    text-transform: uppercase;
+}
+
+.login-image{
+    height: 20%;
+    width: 20%;
+    margin-top: 2em;
+    margin-bottom: 1.5em;
+}
+
+.data{
+    width: 100%;
+    height: 15%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+}
+
+.data__input{
+    width: 20.5%;
+    display: flex;
+    align-items: center;
+    padding-left: .5em;
+    padding-top: .4em;
+    padding-bottom: .4em;
+    margin: .5em;
+    border: 1.5px solid #606060;
+    border-radius: 1.5em;
+}
+
+.data__input input{
+    border: none;
+    flex-basis: 90%;
+}
+
+.text{
+    margin-top: 1em;
+    margin-bottom: 2em;
+}
+
+.text p{
+    font-family: 'Segoe UI Light', Tahoma, Geneva, Verdana, sans-serif;
+    font-style: italic;
+    text-align: center;
+}
+
+.text p span{
+    display: block;
+    margin: .5em;
+}
+
+.buttons{
+    height: 20%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.login-button__base{
+    width: 15%;
+    height: 40%;
+    border: 1px solid #707070;
+}
+
+.login-button__content{
+    width: 100%;
+    height: 100%;
+    padding-left: .25em;
+    padding-right: .25em;
+    display: flex;
+    align-items: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-decoration: none;
+}
+
+.login-button__image{
+    width: 1em;
+    display: inline-flex;
+    flex-basis: 10%;
+}
+
+.login-button__text{
+    display: inline-flex;
+    flex-basis: 90%;
+    padding-left: 20%;
+}
