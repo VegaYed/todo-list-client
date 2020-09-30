@@ -1,7 +1,9 @@
 <div class="container">
-    <app-sidebar></app-sidebar>
-    <div class="contenido">
-        <app-header></app-header>
-        <router-outlet></router-outlet>
+    <div class="side-bar">
+        <app-sidebar></app-sidebar>
+    </div>
+    <div class="content">
+        <app-header class="content__header"></app-header>
+        <router-outlet class="content__main"></router-outlet>
     </div>
 </div>
