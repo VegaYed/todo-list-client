@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { TareaService } from 'src/app/services/tarea.service';
+import { Tarea } from 'src/app/shared/dto/Tarea';
 
 @Component({
   selector: 'app-nueva-tarea',
@@ -7,9 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NuevaTareaComponent implements OnInit {
 
-  constructor() { }
+  tarea: Tarea= new Tarea();
+  constructor(private tarService: TareaService) { }
 
   ngOnInit(): void {
+    this.tarService.addTarea(this.tarea).subscribe(res=>{
+      console.log(res);
+    });
   }
 
 }

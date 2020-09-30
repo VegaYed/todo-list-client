@@ -1,6 +1,6 @@
 export class Categoria{
     
-    id:         number;
+    id?:         number;
     categoria:     string;
 
 

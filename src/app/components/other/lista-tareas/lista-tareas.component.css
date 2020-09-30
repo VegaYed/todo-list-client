@@ -1,0 +1,29 @@
+.nueva_tarea{
+    margin-left: 30%;
+    display: flex;
+    flex-direction: row;
+}
+.tareas{
+    margin-top: 5%;
+}
+
+.listaTareas{
+    display: flex;
+    flex-direction: column;
+    margin-left: 5%;
+    margin-right: 5%;
+    width: 50vw;
+}
+.listaTareas li{
+    display: flex;
+    flex-direction: row;
+    margin-top: 20px;
+}
+
+.listaTareas p{
+    width: 80%;
+    border-style: solid;
+    margin-right: 20px;
+    border-radius: 3px;
+    font-size: 20px;
+}

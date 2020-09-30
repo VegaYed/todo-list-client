@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CategoriaService } from 'src/app/services/categoria.service';
 import { Categoria, CategoryList } from 'src/app/shared/dto/Categorias';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-categorias',
@@ -23,5 +24,33 @@ export class CategoriasComponent implements OnInit {
       }
     );
   }
+
+  agregar(){
+    let newCategoria: Categoria = {
+      categoria: 'Nueva'
+    }
+    this.categoryService.add(newCategoria).subscribe(res=>{
+      this.list.push(res);
+    })
+  }
+  eliminar(cat){
+    Swal.fire({
+      title: 'Deseas eliminar la Categoria?',
+      text: 'Eliminar '+ cat.categoria,
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonText: 'Si, Eliminar',
+      cancelButtonText: 'Cancelar'
+    }).then((result) => {
+      if (result.value) {
+        this.list.splice(this.list.indexOf(cat), 1);
+        this.categoryService.delete(cat).subscribe(res=>{
+          Swal.fire('Categoria Eliminada!','','success');
+        });
+      } 
+    })
+  }
+   
+  
 
 }

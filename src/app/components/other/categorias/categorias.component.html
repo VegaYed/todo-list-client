@@ -1,3 +1,5 @@
+<button mat-stroked-button color="primary" (click)="agregar()">Agregar</button>
 <div class="button-container" *ngFor="let i of list">
-    <a routerLink="tareas/categoria/{{i.id}}" class="button">{{i.categoria}}</a>
+    <a  class="button">{{i.categoria}}
+        <button mat-stroked-button color="primary" (click)="eliminar(i)">Eliminar</button></a>
 </div>

@@ -1,9 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import {HttpClientModule} from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './components/login/login.component';
 import { SidebarComponent } from './components/shared/sidebar/sidebar.component';
 import { HeaderComponent } from './components/shared/header/header.component';
@@ -12,6 +11,17 @@ import { NuevaTareaComponent } from './components/other/nueva-tarea/nueva-tarea.
 import { ListaTareasComponent } from './components/other/lista-tareas/lista-tareas.component';
 import { InicioComponent } from './components/shared/inicio/inicio.component';
 import { FiltrosComponent } from './components/other/filtros/filtros.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+
+/* Material */
+import {MatInputModule} from '@angular/material/input';
+import {MatButtonModule} from '@angular/material/button';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+/* ====== */
+
 
 @NgModule({
   declarations: [
@@ -26,11 +36,23 @@ import { FiltrosComponent } from './components/other/filtros/filtros.component';
     FiltrosComponent
   ],
   imports: [
-    AppRoutingModule,
     BrowserModule,
-    HttpClientModule
+    AppRoutingModule,
+    HttpClientModule,
+    /*  Material*/
+    BrowserAnimationsModule,
+    MatInputModule,
+    MatButtonModule,
+    MatFormFieldModule,
+    MatDatepickerModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    /* ==== */
   ],
-  providers: [],
+  providers: [
+    MatDatepickerModule,
+    MatNativeDateModule
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
