@@ -1,6 +1,53 @@
-.sidebar{
+.container{
     height: 100%;
     width: 100%;
     display: flex;
     flex-direction: column;
+}
+
+.section-filters{
+    display: flex;
+    flex-basis: 20%;
+}
+
+.section-categories{
+    width: 100%;
+    max-height: 72.5%;
+    display: flex;
+    flex-direction: column;
+    flex-basis: 72.5%;
+}
+
+.section-exit{
+    display: flex;
+    flex-basis: 7.5%;
+    border-top: 1px inset #707070;
+}
+
+.title{
+    margin-top: .25em;
+    margin-left: .25em;
+    margin-bottom: .25em;
+    display: block;
+    font-size: 1.5rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-transform: uppercase;
+}
+
+.categories{
+    overflow-y: auto;
+    margin-bottom: 1%;
+}
+
+.exit__text{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-decoration: none;
+}
+
+.exit__text p:hover{
+    border-bottom: 2px inset crimson;
 }

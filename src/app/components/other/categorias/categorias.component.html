@@ -1,1 +1,3 @@
-<p>categorias works!</p>
+<div class="button-container" *ngFor="let i of list">
+    <a routerLink="tareas/categoria/{{i.id}}" class="button">{{i.categoria}}</a>
+</div>

@@ -1,0 +1,19 @@
+.button-container{
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+}
+
+.button{
+    display: flex;
+    align-items: center;
+    width: 80%;
+    height: 1.5em;
+    padding: .1em .5em;
+    margin: .25em auto;
+    border: 2px solid hsl(0, 0%, 70%);
+    border-radius: .4em;
+    font-family: 'Segoe UI Bold', Tahoma, Geneva, Verdana, sans-serif;
+    text-decoration: none;
+}

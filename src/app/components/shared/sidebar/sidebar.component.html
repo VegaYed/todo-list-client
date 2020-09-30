@@ -1,4 +1,15 @@
-<div class="sidebar">
-    <app-filtros></app-filtros>
-    <app-categorias></app-categorias>
+<div class="container">
+    
+    <app-filtros class="section-filters"></app-filtros>
+    
+    <div class="section-categories">
+        <p class="title">Categorías</p>
+        <div class="categories">
+            <app-categorias></app-categorias>
+        </div>
+    </div>
+
+    <div class="section-exit">
+        <a [routerLink]="['/']" class="exit__text"><p>Cerrar sesión</p></a>
+    </div>
 </div>
