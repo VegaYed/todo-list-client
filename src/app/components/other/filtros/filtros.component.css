@@ -5,13 +5,17 @@
 }
 
 .title{
-    margin-top: .25em;
-    margin-left: .25em;
     margin-bottom: .25em;
+    padding: .3em;
+    padding-left: .25em;
     display: block;
     font-size: 1.5rem;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     text-transform: uppercase;
+    color: hsl(0, 0%, 96%);
+    background-color: #E6C532;
+    border-top: 1px solid #707070;
+    border-bottom: 1px solid #707070;
 }
 
 .button-container{
