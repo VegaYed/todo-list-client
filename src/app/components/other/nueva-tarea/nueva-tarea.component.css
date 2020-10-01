@@ -3,3 +3,8 @@
     flex-direction: row;
     align-content: space-between;
 }
+.nuev{
+    min-width: 500px;
+    max-width: 500px;
+    width: 100%;      
+}

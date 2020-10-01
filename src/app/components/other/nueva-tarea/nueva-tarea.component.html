@@ -1,9 +1,11 @@
 <div class="nueva_tareas">
-  <mat-form-field >
-    <mat-label>Nueva Tarea</mat-label>
-    <input matInput #message maxlength="50" placeholder="Nueva tarea">
-    <mat-hint align="end">{{message.value.length}} / 50</mat-hint>
-  </mat-form-field>
+  <div class="nuev">
+    <mat-form-field style="width: 100%;" >
+      <mat-label>Nueva Tarea</mat-label>
+      <input matInput #message maxlength="50" placeholder="Nueva tarea">
+      <mat-hint align="end">{{message.value.length}} / 50</mat-hint>
+    </mat-form-field>
+  </div>
   
   <mat-form-field color="accent" appearance="fill">
     <mat-label>Selecciona Fecha</mat-label>
