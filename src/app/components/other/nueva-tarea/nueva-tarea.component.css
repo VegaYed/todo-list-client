@@ -11,17 +11,38 @@
   width: 100%;
 }
 
-.nueva_tareas .task__name {
+.task__new {
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
   -ms-flex-line-pack: center;
       align-content: center;
-  -ms-flex-preferred-size: 60%;
-      flex-basis: 60%;
+  -ms-flex-preferred-size: 50%;
+      flex-basis: 50%;
+  max-width: 50%;
 }
 
-.nueva_tareas .task__name .mat-input-wrapper {
-  width: 300px !important;
+.task__new .task__name {
+  width: 100%;
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+}
+
+.task__date {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-preferred-size: 20%;
+      flex-basis: 20%;
+  max-width: 20%;
+}
+
+.task__date .task__date--pick {
+  width: 95%;
 }
 /*# sourceMappingURL=nueva-tarea.component.css.map */

@@ -3,14 +3,28 @@
     flex-direction: row;
     align-content: space-between;
     width: 100%;
+}
+
+.task__new{
+    display: inline-flex;
+    align-content: center;
+    flex-basis: 50%;
+    max-width: 50%;
 
     .task__name{
-        display: inline-flex;
-        align-content: center;
-        flex-basis: 60%;
+        width: 100%;
+        margin-left: 1.5rem;
+        margin-right: 1.5rem;
+    }
+}
 
-        .mat-input-wrapper{
-            width: 300px !important;
-        }
+.task__date{
+    display: inline-flex;
+    align-content: center;
+    justify-content: center;
+    flex-basis: 20%;
+    max-width: 20%;
+    .task__date--pick{
+        width: 95%;
     }
 }
