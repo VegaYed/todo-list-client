@@ -1,19 +1,73 @@
-.button-container{
-    display: flex;
-    flex-direction: column;
-    justify-items: center;
-    align-items: center;
+.category {
+  width: 100%;
+  height: 100%;
 }
 
-.button{
-    display: flex;
-    align-items: center;
-    width: 80%;
-    height: 1.5em;
-    padding: .1em .5em;
-    margin: .25em auto;
-    border: 2px solid hsl(0, 0%, 70%);
-    border-radius: .4em;
-    font-family: 'Segoe UI Bold', Tahoma, Geneva, Verdana, sans-serif;
-    text-decoration: none;
+.category__actions {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  justify-items: flex-end;
+  -ms-flex-preferred-size: 10%;
+      flex-basis: 10%;
 }
+
+.category__actions .actions__add {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 1em;
+  margin-top: .15rem;
+  background-color: #0cca4b;
+  color: black;
+}
+
+.category__list {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  justify-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.category__list .category__button {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 60%;
+  height: 1.5em;
+  padding: .1em .5em;
+  margin: .25em auto;
+  border: 2px solid #b3b3b3;
+  border-radius: .4em;
+  font-family: 'Segoe UI Bold', Tahoma, Geneva, Verdana, sans-serif;
+  text-decoration: none;
+}
+
+.category__list .category__delete {
+  background: #BF2431;
+  color: white;
+}
+/*# sourceMappingURL=categorias.component.css.map */

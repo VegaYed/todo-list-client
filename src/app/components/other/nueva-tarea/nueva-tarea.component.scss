@@ -1,0 +1,16 @@
+.nueva_tareas{
+    display: flex;
+    flex-direction: row;
+    align-content: space-between;
+    width: 100%;
+
+    .task__name{
+        display: inline-flex;
+        align-content: center;
+        flex-basis: 60%;
+
+        .mat-input-wrapper{
+            width: 300px !important;
+        }
+    }
+}

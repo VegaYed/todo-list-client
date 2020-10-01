@@ -20,6 +20,9 @@ import {MatButtonModule} from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
+import {MatIconModule} from '@angular/material/icon';
+import {MatTableModule} from '@angular/material/table';
+import { FormsModule } from '@angular/forms';
 /* ====== */
 
 
@@ -39,6 +42,7 @@ import { MatNativeDateModule } from '@angular/material/core';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    FormsModule,
     /*  Material*/
     BrowserAnimationsModule,
     MatInputModule,
@@ -47,6 +51,8 @@ import { MatNativeDateModule } from '@angular/material/core';
     MatDatepickerModule,
     MatDatepickerModule,
     MatNativeDateModule,
+    MatIconModule,
+    MatTableModule
     /* ==== */
   ],
   providers: [

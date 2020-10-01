@@ -1,15 +1,18 @@
 <div class="container">
     
-    <app-filtros class="section-filters"></app-filtros>
+    <div class="section-filters">
+        <h2>Filtros</h2>
+        <app-filtros class="filters"></app-filtros>
+    </div>
     
     <div class="section-categories">
-        <p class="title">Categorías</p>
-        <div class="categories">
-            <app-categorias></app-categorias>
-        </div>
+        <h2>Categorías</h2>
+        <app-categorias class="categories"></app-categorias>
     </div>
 
-    <div class="section-exit">
-        <a [routerLink]="['/']" class="exit__text"><p>Cerrar sesión</p></a>
+    <div class="logout">
+        <a [routerLink]="['/']" class="logout__link">
+            <p class="logout__text">Cerrar sesión</p>
+        </a>
     </div>
 </div>

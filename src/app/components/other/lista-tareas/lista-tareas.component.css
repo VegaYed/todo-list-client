@@ -1,29 +1,69 @@
-.nueva_tarea{
-    margin-left: 20px;
-    display: flex;
-    flex-direction: row;
-}
-.tareas{
-    margin-top: 5%;
+
+.container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+  height: 100%;
 }
 
-.listaTareas{
-    display: flex;
-    flex-direction: column;
-    margin-left: 5%;
-    margin-right: 5%;
-    width: 50vw;
-}
-.listaTareas li{
-    display: flex;
-    flex-direction: row;
-    margin-top: 20px;
+.container .nueva_tarea {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-preferred-size: 15%;
+      flex-basis: 15%;
+  width: 100%;
+  height: 15%;
 }
 
-.listaTareas p{
-    width: 80%;
-    border-style: solid;
-    margin-right: 20px;
-    border-radius: 3px;
-    font-size: 20px;
+.container .nueva_tarea > app-nueva-tarea {
+  height: inherit;
+  width: inherit;
 }
+
+.container .listaTareas {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-preferred-size: 85%;
+      flex-basis: 85%;
+  padding-top: 15px;
+  margin-left: 5%;
+  margin-right: 5%;
+  width: 50vw;
+}
+
+.tareas {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.listaTareas li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  margin-top: 20px;
+}
+
+.listaTareas p {
+  width: 300px;
+  border-style: solid;
+  margin-right: 20px;
+  border-radius: 3px;
+  font-size: 20px;
+}
+/*# sourceMappingURL=lista-tareas.component.css.map */

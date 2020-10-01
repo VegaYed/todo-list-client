@@ -6,9 +6,10 @@
 }
 
 .side-bar{
-    width: 30%;
+    width: 20%;
     height: 100%;
     border-right: 1px solid#707070;
+    background-color: #f3f3f3;
 }
 
 .content{
@@ -16,17 +17,17 @@
     height: 100%;
     display: flex;
     flex-direction: column;
+    background-color: #ebebeb;
 }
 
 .content__header{
     width: 100%;
-    height: 10%;
+    height: 3rem;
     display: flex;
     border-bottom: 1px solid #707070;
 }
 
 .content__main{
     width: 100%;
-    height: 90%;
-    display: flex;
+    height: 100%;
 }

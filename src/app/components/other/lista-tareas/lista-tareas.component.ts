@@ -16,12 +16,12 @@ export class ListaTareasComponent implements OnInit {
   constructor(private tareaService: TareaService) { }
 
   ngOnInit(): void {
-   /*  this.tareaService.getAll().subscribe(res=>{
+    this.tareaService.getAll().subscribe(res=>{
       this.lista = res;
-    }); */
+    });
   }
 
-  eliminar(){
+  eliminar(t: Tarea){
     Swal.fire({
       title: 'Deseas eliminar la tarea?',
       text: '',
@@ -31,11 +31,10 @@ export class ListaTareasComponent implements OnInit {
       cancelButtonText: 'Cancelar'
     }).then((result) => {
       if (result.value) {
-        Swal.fire(
-          'Tarea Eliminada!',
-          '',
-          'success'
-        )
+        this.tareaService.delete(t).subscribe(res=>{
+          this.lista.splice(this.lista.indexOf(t), 1);    // elimina de la lista que se muestra
+          Swal.fire( 'Tarea Eliminada!','','success');
+        })
       } 
     })
   }

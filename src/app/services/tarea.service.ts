@@ -15,6 +15,10 @@ export class TareaService {
   }
 
   addTarea(tarea: Tarea){
-    return this.http.post(URL_API+'/tareas',tarea);
+    return this.http.post(URL_API+'/tarea',tarea);
+  }
+
+  delete(tarea: Tarea){
+    return this.http.delete(URL_API+'/tarea/'+tarea.idtarea);
   }
 }  

@@ -17,7 +17,6 @@ export class CategoriasComponent implements OnInit {
       (resp) => {
         this.list = resp;
         this.list = this.list.filter(x => x.categoria != 'scategoria');
-        console.log(resp);
       },
       (error) => {
         console.log(error);
@@ -35,11 +34,11 @@ export class CategoriasComponent implements OnInit {
   }
   eliminar(cat){
     Swal.fire({
-      title: 'Deseas eliminar la Categoria?',
-      text: 'Eliminar '+ cat.categoria,
+      title: '¿Deseas eliminar la Categoría?',
+      text: 'Eliminar "'+ cat.categoria +'"',
       icon: 'warning',
       showCancelButton: true,
-      confirmButtonText: 'Si, Eliminar',
+      confirmButtonText: 'Sí. Eliminar',
       cancelButtonText: 'Cancelar'
     }).then((result) => {
       if (result.value) {
