@@ -4,32 +4,25 @@
     </div>
     <div class="listaTareas">
         <h2>Lista de Tareas</h2>
-        <ul>
-            <li >
-                <p>Tarea</p>
-                <button mat-stroked-button color="primary">Ver</button>
-                <button mat-stroked-button color="secondary">Editar</button>
-                <button mat-stroked-button color="warn" (click)="eliminar()">Eliminar</button>
-            </li>
-            <li >
-                <p>Tarea</p>
-                <button mat-stroked-button color="primary">Ver</button>
-                <button mat-stroked-button color="secondary">Editar</button>
-                <button mat-stroked-button color="warn" (click)="eliminar()">Eliminar</button>
-            </li>
-            <li >
-                <p>Tarea</p>
-                <button mat-stroked-button color="primary">Ver</button>
-                <button mat-stroked-button color="secondary">Editar</button>
-                <button mat-stroked-button color="warn" (click)="eliminar()">Eliminar</button>
-            </li>
-            <li >
-                <p>Tarea</p>
-                <button mat-stroked-button color="primary">Ver</button>
-                <button mat-stroked-button color="secondary">Editar</button>
-                <button mat-stroked-button color="warn" (click)="eliminar()">Eliminar</button>
-            </li>
-            
-        </ul>
+        <table>
+            <thead>
+                <tr>
+                    <td>Tarea (Descripción)</td>
+                    <td>Otro</td>
+                    <td>Gestión de tareas</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Col 1</td>
+                    <td>Col 2</td>
+                    <td>
+                        <button mat-stroked-button color="primary">Ver</button>
+                        <button mat-stroked-button color="secondary">Editar</button>
+                        <button mat-stroked-button color="warn" (click)="eliminar()">Eliminar</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
     </div>
 </div>
