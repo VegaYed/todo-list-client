@@ -1,58 +1,58 @@
 $border-solid-1px : 1px solid black;
 
+@mixin style-title{
+    width: 100%;
+    min-height: 28px;
+    // Box Model
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    // Background
+    background-color: #FADF63;
+    box-shadow: black 5px;
+    border-top: $border-solid-1px;
+    border-bottom: $border-solid-1px;
+    // DOM $Text
+    font-size: 1rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: white;
+}
+
 .container{
     height: 100%;
     width: 100%;
     display: flex;
     flex-direction: column;
-
-    &:not([class*="logout"]):hover{
-        h2{
-            transition: .5s;
-        }
-    
-        &:not(:hover) h2{
-            transition: .5s;
-        }
-    }
-    
 }
 
 [class^="section"]{
-    
+    height: 100%;
     width: 100%;
     display: flex;
     flex-direction: column;
-    
+    align-items: center;
     h2{
-        height: 3rem;
-        padding-left: .5rem;
-        display: flex;
-        align-items: center;
-        font-size: 1.25rem;
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        text-transform: uppercase;
-        color: black;
-        border-top: $border-solid-1px;
-        border-bottom: $border-solid-1px;
+        @include style-title;
+    }
+
+    &:hover h2,
+    &:not(:hover) h2{
+        transition: .75s;
+    }
+
+    &:hover h2{
+        transition-delay: .25s;
+        background-color: #419EF2;
     }
 }
 
 .section-filters{
     flex-basis: 20%;
-
-    &:hover h2{
-        background-color: #419EF2;
-    }
 }
 
 .section-categories{
     height: 72.5%;
     flex-basis: 72.5%;
-
-    &:hover h2{
-        background-color: #F24184;
-    }
 }
 
 .filters,
@@ -70,29 +70,30 @@ $border-solid-1px : 1px solid black;
 .logout{
     display: flex;
     flex-basis: 7.5%;
-    min-height: 7.5%;
-    .logout__link{
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        text-decoration: none;
-        color: hsl(0, 0%, 27%);
-        border-top: 1px dashed #3c3c3c;
-    
-        &:hover{
-            transition: .5s;
-            background-color: rgb(204, 50, 81);
+    min-height: 30px;
+}
 
-            .logout__text{
-                transition: .5s;
-                transform: translateX(-50%);
-            }
-        }
+.logout__link{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-decoration: none;
+    color: hsl(0, 0%, 27%);
+    border-top: 2px dashed #FF1654;
 
-        &:not(:hover) *{
-            transition: .5s;
+    &:hover{
+        transition: .5s;
+        border-color: black;
+        background-color: #FF1654;
+        .logout__text{
+            transition: .8s;
+            color: white;
         }
+    }
+
+    &:not(:hover){
+        transition: .8s;
     }
 }

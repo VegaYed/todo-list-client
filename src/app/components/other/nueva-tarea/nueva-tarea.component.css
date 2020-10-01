@@ -1,5 +1,27 @@
-.nueva_tareas{
-    display: flex;
-    flex-direction: row;
-    align-content: space-between;
+.nueva_tareas {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-line-pack: justify;
+      align-content: space-between;
+  width: 100%;
 }
+
+.nueva_tareas .task__name {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -ms-flex-preferred-size: 60%;
+      flex-basis: 60%;
+}
+
+.nueva_tareas .task__name .mat-input-wrapper {
+  width: 300px !important;
+}
+/*# sourceMappingURL=nueva-tarea.component.css.map */
