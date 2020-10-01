@@ -1,18 +1,20 @@
 <div class="nueva_tareas">
-  <div class="nueva">
-    <mat-form-field class="inp">
+  <div class="task__new">
+    <mat-form-field class="task__name">
       <mat-label>Nueva Tarea</mat-label>
       <input [(ngModel)]="tarea.tarea" matInput #message maxlength="50" placeholder="Nueva tarea">
       <mat-hint align="end">{{message.value.length}} / 50</mat-hint>
     </mat-form-field>
   </div>
-  <mat-form-field color="accent" appearance="fill">
-    <mat-label>Selecciona Fecha</mat-label>
-    <input  [(ngModel)]="tarea.fechaRealizacion" matInput [matDatepicker]="picker2">
-    <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
-    <mat-datepicker #picker2 color="primary"></mat-datepicker>
-  </mat-form-field>
-  
+  <div class="task__date">
+    <mat-form-field class="task__date--pick" color="accent" appearance="fill">
+      <mat-label>Selecciona Fecha</mat-label>
+      <input  [(ngModel)]="tarea.fechaRealizacion" matInput [matDatepicker]="picker2">
+      <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+      <mat-datepicker #picker2 color="primary"></mat-datepicker>
+    </mat-form-field>
+  </div>
+
   <button mat-stroked-button color="primary" >Seleccionar Categorias</button>
   <button mat-stroked-button color="primary" (click)="agregar()">Agregar</button>
 </div>

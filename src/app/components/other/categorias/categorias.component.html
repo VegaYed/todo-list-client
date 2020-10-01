@@ -1,9 +1,7 @@
 <div class="category">
-
     <div class="category__actions">
         <button class="actions__add" mat-raised-button color="primary" (click)="agregar()">Agregar</button>
     </div>
-
     <div class="category__list" *ngFor="let i of list">
         <a  class="category__button">{{i.categoria}}</a>
         <button class="category__delete" mat-stroked-button color="primary" (click)="eliminar(i)">Del</button>
