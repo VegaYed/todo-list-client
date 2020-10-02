@@ -1,6 +1,6 @@
 <div class="container">
     <div class="nueva_tarea">
-        <app-nueva-tarea></app-nueva-tarea>
+        <app-nueva-tarea (tareaEmmiter)="agregar($event)"></app-nueva-tarea>
     </div>
     <div class="listaTareas">
         <h2>Lista de Tareas</h2>
@@ -15,7 +15,7 @@
             <tbody>
                 <tr *ngFor="let t of lista">
                     <td><p>{{t.tarea}}</p></td>
-                    <td>{{t.fechaRealizacion}}</td>
+                    <td>{{t.fechaRealizacion | amTimeAgo}}</td>
                     <td>
                         <button mat-icon-button color="primary"><mat-icon>edit</mat-icon></button>
                         <button mat-icon-button color="warn" (click)="eliminar(t)"><mat-icon>delete</mat-icon></button>

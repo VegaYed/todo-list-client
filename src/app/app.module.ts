@@ -12,7 +12,7 @@ import { ListaTareasComponent } from './components/other/lista-tareas/lista-tare
 import { InicioComponent } from './components/shared/inicio/inicio.component';
 import { FiltrosComponent } from './components/other/filtros/filtros.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
+import { MomentModule } from 'ngx-moment';
 
 /* Material */
 import {MatInputModule} from '@angular/material/input';
@@ -52,8 +52,10 @@ import { FormsModule } from '@angular/forms';
     MatDatepickerModule,
     MatNativeDateModule,
     MatIconModule,
-    MatTableModule
+    MatTableModule,
     /* ==== */
+
+    MomentModule
   ],
   providers: [
     MatDatepickerModule,
