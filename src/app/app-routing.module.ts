@@ -10,7 +10,7 @@ const routes: Routes = [
   {path:'inicio', component: InicioComponent, canActivate:[AuthGuard],
       children:[
         {path:'tareas', component:ListaTareasComponent},
-        {path:'tareas/categoria/:id', component: ListaTareasComponent}
+        {path:'tareas/categoria/:idCategoria', component: ListaTareasComponent}
       ]
   }
 ];

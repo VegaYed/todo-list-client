@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { ActivatedRoute } from '@angular/router';
 import { TareaService } from 'src/app/services/tarea.service';
 import { Tarea } from 'src/app/shared/dto/Tarea';
 import Swal from 'sweetalert2';
@@ -14,10 +15,20 @@ export class ListaTareasComponent implements OnInit {
 
   lista: Tarea[] =[];
 
-  constructor(private tareaService: TareaService, public dialog: MatDialog) { }
+  constructor(private tareaService: TareaService
+    , public dialog: MatDialog
+    , private route: ActivatedRoute) { }
 
   ngOnInit(): void {
+    
     this.cargarTareas();
+    this.route.params.subscribe(res=>{    // obtiene id de la ruta, para mostrar tareas de una categoria
+      if(res.idCategoria){
+        this.tareaService.getTareasCategoria(res.idCategoria).subscribe(resp=>{
+          this.lista = resp;
+        })
+      }
+    });
   }
   
   cargarTareas(){
@@ -26,9 +37,8 @@ export class ListaTareasComponent implements OnInit {
     }, error=>{console.log(error)});
   }
   agregar($event){    // recibe la tarea nueva desde el componente Nueva tarea
-    console.log("DESDE LISTAR", $event);
-    let ntar= $event;
-    this.lista.push(ntar);  
+    let nuevaTar= $event;
+    this.lista.push(nuevaTar);  
   }
 
   editar(tarea){
@@ -36,6 +46,9 @@ export class ListaTareasComponent implements OnInit {
 
     dial.afterClosed().subscribe(res=>{
       console.log("Luego de cerrar", res);
+      this.tareaService.edit(res).subscribe(resp=>{
+        console.log("Tarea editada:", resp);
+      });
     })
   }
 
