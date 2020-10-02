@@ -24,9 +24,12 @@ export class NuevaTareaComponent implements OnInit {
   }
 
   agregar(){
+    if(this.tarea.categorias.length==0){
+      return Swal.fire('Seleccione una categoria','', 'info');
+    }
     let newTarea : TareaCategoria = {
       tarea: this.tarea,
-      categorias: [{id: 7, categoria:'TAREAS'}, {id: 8, categoria:'MUCHAS TAREAS'}]
+      categorias: this.tarea.categorias
     };
     this.tarService.addTarea(newTarea).subscribe(res=>{
       Swal.fire('Nueva tarea Agregada!', '', 'success');
