@@ -25,6 +25,7 @@ import {MatTableModule} from '@angular/material/table';
 import { FormsModule } from '@angular/forms';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatCheckboxModule} from '@angular/material/checkbox';
+import {MatChipsModule} from '@angular/material/chips';
 /* ====== */
 
 import 'moment/locale/es';
@@ -63,7 +64,8 @@ import { RegistroComponent } from './components/registro/registro.component'; //
     MatIconModule,
     MatTableModule,
     MatDialogModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    MatChipsModule
     /* ==== */
   ],
   providers: [

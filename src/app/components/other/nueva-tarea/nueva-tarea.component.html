@@ -6,6 +6,11 @@
       <mat-hint align="end">{{message.value.length}} / 50</mat-hint>
     </mat-form-field>
   </div>
+  <mat-chip-list class="example-chip"cdkDropList cdkDropListOrientation="horizontal">
+    <mat-chip color="primary" *ngFor="let c of tarea.categorias" (removed)="eliminaCat(c)" >{{c.categoria}}
+      <mat-icon matChipRemove >cancel</mat-icon>
+    </mat-chip>
+  </mat-chip-list>
   <div class="task__date">
     <mat-form-field class="task__date--pick" color="accent" appearance="fill">
       <mat-label>Selecciona Fecha</mat-label>

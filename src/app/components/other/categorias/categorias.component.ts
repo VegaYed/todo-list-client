@@ -27,7 +27,6 @@ export class CategoriasComponent implements OnInit {
   }
 
   agregar(){
-
     Swal.fire({
       title: 'Ingresa un nombre para agregar una nueva categoría',
       icon: 'info',
@@ -42,14 +41,10 @@ export class CategoriasComponent implements OnInit {
       }
     }).then(
       (result) => {
-        if(result.value){
-          
+        if(result.value){          
           let newCategoria: Categoria = {
             categoria: result.value
-          }
-    
-          console.log('Nombre de la categoría -- ' + result.value)
-
+          }    
           this.categoryService.add(newCategoria).subscribe(
             (res) => {
               this.list.push(res);
@@ -63,15 +58,6 @@ export class CategoriasComponent implements OnInit {
         }
       }
     );
-
-    /*
-    let newCategoria: Categoria = {
-      categoria: 'Nueva'
-    }
-    this.categoryService.add(newCategoria).subscribe(res=>{
-      this.list.push(res);
-    })
-    */
   }
 
   eliminar(cat){
@@ -93,8 +79,7 @@ export class CategoriasComponent implements OnInit {
   }
    
   gestionar(){
-    this.isManaging = !this.isManaging;
-    //this.isManaging = (this.isManaging) ? false : true;
+     this.isManaging = !this.isManaging;
   }
 
 }

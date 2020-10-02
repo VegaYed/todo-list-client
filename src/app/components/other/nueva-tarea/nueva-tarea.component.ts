@@ -35,16 +35,21 @@ export class NuevaTareaComponent implements OnInit {
       Swal.fire('Nueva tarea Agregada!', '', 'success');
       this.tareaEmmiter.emit(<Tarea>res);  // envia objeto para agregar al componente lista
       this.tarea = new Tarea();
+      this.tarea.fechaRealizacion = new Date();
       this.tarea.categorias = [];
     })
   }
 
   seleccionaCategorias(){
-    const dial = this.dialog.open(DialogCategoriasComponent,{data: this.tarea.categorias});
-
+    const dial = this.dialog.open(DialogCategoriasComponent,{data: []});
     dial.afterClosed().subscribe(res=>{  // recibe las categorias seleccionadas
       this.tarea.categorias = res;      
     })
+  }
+  eliminaCat(cat){
+    this.tarea.categorias.splice(this.tarea.categorias.indexOf(cat),1);
+
+    console.log(this.tarea);
   }
 
 }

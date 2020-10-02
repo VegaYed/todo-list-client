@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { ActivatedRoute } from '@angular/router';
 import { TareaService } from 'src/app/services/tarea.service';
+import { Categoria } from 'src/app/shared/dto/Categorias';
 import { Tarea } from 'src/app/shared/dto/Tarea';
 import Swal from 'sweetalert2';
 import { DialogEditTareaComponent } from '../dialog-edit-tarea/dialog-edit-tarea.component';
@@ -19,9 +20,13 @@ export class ListaTareasComponent implements OnInit {
     , public dialog: MatDialog
     , private route: ActivatedRoute) { }
 
+    tareas: Tarea[] = [];
   ngOnInit(): void {
     
     this.cargarTareas();
+  }
+  
+  cargarTareas(){
     this.route.params.subscribe(res=>{    // obtiene id de la ruta, para mostrar tareas de una categoria
       if(res.idCategoria){
         this.tareaService.getTareasCategoria(res.idCategoria).subscribe(resp=>{
@@ -29,27 +34,29 @@ export class ListaTareasComponent implements OnInit {
           console.log("mostrandoo...", this.lista);
         })
       }
+      else{
+        this.tareaService.getAll().subscribe(res=>{
+          this.lista = res;
+          console.log(res);
+        }, error=>{console.log(error)});
+      }
     });
   }
-  
-  cargarTareas(){
-    this.tareaService.getAll().subscribe(res=>{
-      this.lista = res;
-      console.log(res);
-    }, error=>{console.log(error)});
-  }
+
+
   agregar($event){    // recibe la tarea nueva desde el componente Nueva tarea
     let nuevaTar= $event;
     this.lista.push(nuevaTar);  
   }
 
   editar(tarea){
-    const dial = this.dialog.open(DialogEditTareaComponent,{data: tarea});
-
+    console.log("Tarea::",tarea);
+    const dial = this.dialog.open(DialogEditTareaComponent,{data: {idtarea: tarea.idtarea, tarea: tarea.tarea, fechaRealizacion:tarea.fechaRealizacion}});
     dial.afterClosed().subscribe(res=>{
-      console.log("Luego de cerrar", res);
       this.tareaService.edit(res).subscribe(resp=>{
         console.log("Tarea editada:", resp);
+        tarea = resp;
+        this.cargarTareas();
       });
     })
   }
