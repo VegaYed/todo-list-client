@@ -10,6 +10,8 @@ import Swal from 'sweetalert2';
 })
 export class CategoriasComponent implements OnInit {
   list: Categoria[];
+  isManaging : boolean = false;
+
   constructor(private categoryService: CategoriaService) { }
 
   ngOnInit(): void {
@@ -32,6 +34,7 @@ export class CategoriasComponent implements OnInit {
       this.list.push(res);
     })
   }
+
   eliminar(cat){
     Swal.fire({
       title: '¿Deseas eliminar la Categoría?',
@@ -44,12 +47,15 @@ export class CategoriasComponent implements OnInit {
       if (result.value) {
         this.list.splice(this.list.indexOf(cat), 1);
         this.categoryService.delete(cat).subscribe(res=>{
-          Swal.fire('Categoria Eliminada!','','success');
+          Swal.fire('¡Categoria Eliminada!','','success');
         });
       } 
     })
   }
    
-  
+  gestionar(){
+    this.isManaging = !this.isManaging;
+    //this.isManaging = (this.isManaging) ? false : true;
+  }
 
 }

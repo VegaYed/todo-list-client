@@ -17,6 +17,7 @@
   justify-items: flex-end;
   -ms-flex-preferred-size: 10%;
       flex-basis: 10%;
+  padding-top: .25rem;
 }
 
 .category__actions .actions__add {
@@ -32,6 +33,19 @@
   margin-top: .15rem;
   background-color: #0cca4b;
   color: black;
+}
+
+.category__actions .actions__manage {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 1em;
+  background-color: dodgerblue;
 }
 
 .category__list {
