@@ -5,22 +5,22 @@
     </svg>
     <div class="data">
         <div class="data__input">
-            <input type="text" placeholder="Nombre de usuario o correo electrónico">
+            <input [(ngModel)]="usuario.nombre" type="text" placeholder="Nombre de usuario o correo electrónico">
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
                 <path id="Icon_awesome-user-alt" data-name="Icon awesome-user-alt" d="M10,11.25A5.625,5.625,0,1,0,4.375,5.625,5.626,5.626,0,0,0,10,11.25Zm5,1.25H12.848a6.8,6.8,0,0,1-5.7,0H5a5,5,0,0,0-5,5v.625A1.875,1.875,0,0,0,1.875,20h16.25A1.875,1.875,0,0,0,20,18.125V17.5A5,5,0,0,0,15,12.5Z" fill="rgba(132,132,132,0.6)"/>
             </svg>              
         </div>
         <div class="data__input">
-            <input type="password" placeholder="Contraseña">
+            <input [(ngModel)]="usuario.password" type="password" placeholder="Contraseña">
         </div>
     </div>
     <div class="buttons">
         <span class="login-button__base">
-            <a class="login-button__content" routerLink="inicio">
+            <a class="login-button__content" (click)="registrar()">
                 <svg class="login-button__image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 21">
                     <path id="Icon_open-account-login" data-name="Icon open-account-login" d="M9,0V3H21V18H9v3H24V0Zm3,6V9H0v3H12v3l6-4.5Z" fill="rgba(72,72,72,0.6)"/>
                 </svg>
-                <p class="login-button__text">Registrar</p>
+                <p class="login-button__text" >Registrar</p>
             </a>
         </span>
     </div>
