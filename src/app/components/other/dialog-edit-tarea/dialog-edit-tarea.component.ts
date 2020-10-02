@@ -12,8 +12,6 @@ export class DialogEditTareaComponent implements OnInit {
   constructor(@Inject(MAT_DIALOG_DATA) public data: Tarea) { }
 
   ngOnInit(): void {
-
-    console.log(this.data);
   }
 
   

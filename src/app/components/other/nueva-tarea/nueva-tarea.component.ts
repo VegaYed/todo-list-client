@@ -37,19 +37,17 @@ export class NuevaTareaComponent implements OnInit {
       this.tarea = new Tarea();
       this.tarea.fechaRealizacion = new Date();
       this.tarea.categorias = [];
-    })
+    }, error=>{console.error(error)})
   }
 
   seleccionaCategorias(){
     const dial = this.dialog.open(DialogCategoriasComponent,{data: []});
     dial.afterClosed().subscribe(res=>{  // recibe las categorias seleccionadas
       this.tarea.categorias = res;      
-    })
+    }, error=>{console.error(error)})
   }
-  eliminaCat(cat){
+  eliminaCat(cat){ 
     this.tarea.categorias.splice(this.tarea.categorias.indexOf(cat),1);
-
-    console.log(this.tarea);
   }
 
 }

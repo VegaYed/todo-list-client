@@ -15,21 +15,18 @@ export class DialogCategoriasComponent implements OnInit {
   constructor(@Inject(MAT_DIALOG_DATA) public data: Categoria[], private catService: CategoriaService) { }
 
   ngOnInit(): void {
-    this.catService.readAll().subscribe(res=>{
+    this.catService.readAll().subscribe((res)=>{
       this.categorias = res;
-    });
+    },(error)=>{console.log(error)}
+    );
   }
   check(cat, e){
-    /* this.categoriasSelec.splice(this.categoriasSelec.indexOf(cat),1); */
     if(e.checked){
       this.data.push(cat);
     }
     else{
       this.data.splice(this.categoriasSelec.indexOf(cat),1);
     }
-
-    console.log(this.data);
-
   }
 
 }
