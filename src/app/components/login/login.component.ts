@@ -18,7 +18,10 @@ export class LoginComponent implements OnInit {
   login(){
     this.usuarioService.login(this.usuario).subscribe(res=>{
       console.log(res);
-      this.router.navigate(['/inicio']);
+      let resp = <any>res;
+      this.usuarioService.setToken(resp.token);
+      console.log("Loggeado");
+      this.router.navigate(['inicio']);
     });
   }
 

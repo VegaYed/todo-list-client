@@ -11,7 +11,7 @@
     </div>
 
     <div class="logout">
-        <a [routerLink]="['/']" class="logout__link">
+        <a (click)="cerrarSesion()" class="logout__link">
             <p class="logout__text">Cerrar sesión</p>
         </a>
     </div>

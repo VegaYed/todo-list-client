@@ -4,7 +4,7 @@
         <button mat-icon-button color="primary"  (click)="agregar()"><mat-icon>note_add</mat-icon></button>
     </div>
     <div class="category__list" *ngFor="let i of list">
-        <a routerLink="tareas/categoria/{{i.id}}" class="category__button">{{i.categoria}}</a>
+        <a routerLink="categoria/{{i.id}}" class="category__button">{{i.categoria}}</a>
         <button *ngIf="isManaging" class="category__delete" mat-stroked-button color="primary" (click)="eliminar(i)">Del</button>
     </div>
 </div>

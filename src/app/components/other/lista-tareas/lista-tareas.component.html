@@ -13,6 +13,7 @@
                 </tr>
             </thead>
             <tbody>
+                <tr *ngIf="lista.length==0">No hay registros</tr>
                 <tr *ngFor="let t of lista">
                     <td><p>{{t.tarea}}</p></td>
                     <td>{{t.fechaRealizacion | amTimeAgo }}</td>

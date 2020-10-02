@@ -11,8 +11,8 @@ const routes: Routes = [
   {path:'registro', component: RegistroComponent },
   {path:'inicio', component: InicioComponent, canActivate:[AuthGuard],
       children:[
-        {path:'tareas', component:ListaTareasComponent},
-        {path:'tareas/categoria/:idCategoria', component: ListaTareasComponent}
+        {path:'', component:ListaTareasComponent},
+        {path:'categoria/:idCategoria', component: ListaTareasComponent}
       ]
   }
 ];
