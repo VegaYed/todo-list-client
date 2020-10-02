@@ -77,8 +77,7 @@ export class CategoriasComponent implements OnInit {
       } 
     })
   }
-   
-  gestionar(){
+  gestionar(){ // muestra u oculta botones de eliminar en lista de categorias
      this.isManaging = !this.isManaging;
   }
 

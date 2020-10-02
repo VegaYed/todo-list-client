@@ -20,10 +20,14 @@ export class ListaTareasComponent implements OnInit {
     , public dialog: MatDialog
     , private route: ActivatedRoute) { }
 
-    tareas: Tarea[] = [];
-  ngOnInit(): void {
-    
-    this.cargarTareas();
+  ngOnInit(): void {    
+    this.cargarTareas();  
+  }
+
+  tareaVencida(date):boolean{
+    if((new Date(date).getTime() - new Date().getTime()) <0) return true;
+
+    return false;
   }
   
   cargarTareas(){
@@ -31,13 +35,15 @@ export class ListaTareasComponent implements OnInit {
       if(res.idCategoria){
         this.tareaService.getTareasCategoria(res.idCategoria).subscribe(resp=>{
           this.lista = resp;
-          console.log("mostrandoo...", this.lista);
         })
       }
       else{
         this.tareaService.getAll().subscribe(res=>{
           this.lista = res;
-          console.log(res);
+          for(let t of this.lista){
+            var time = new Date(t.fechaRealizacion).getTime() - new Date().getTime();
+            console.log(t, "   DIFF ", time);
+          }
         }, error=>{console.log(error)});
       }
     });
@@ -50,14 +56,16 @@ export class ListaTareasComponent implements OnInit {
   }
 
   editar(tarea){
-    console.log("Tarea::",tarea);
-    const dial = this.dialog.open(DialogEditTareaComponent,{data: {idtarea: tarea.idtarea, tarea: tarea.tarea, fechaRealizacion:tarea.fechaRealizacion}});
+    const dial = this.dialog.open(DialogEditTareaComponent      
+                    , {data: {idtarea: tarea.idtarea
+                              , tarea: tarea.tarea
+                              , fechaRealizacion:tarea.fechaRealizacion}
+                      });
     dial.afterClosed().subscribe(res=>{
       this.tareaService.edit(res).subscribe(resp=>{
-        console.log("Tarea editada:", resp);
         tarea = resp;
         this.cargarTareas();
-      });
+      }, error=>{console.error(error)});
     })
   }
 
@@ -74,7 +82,7 @@ export class ListaTareasComponent implements OnInit {
         this.tareaService.delete(t).subscribe(res=>{
           this.lista.splice(this.lista.indexOf(t), 1);    // elimina de la lista que se muestra
           Swal.fire( 'Tarea Eliminada!','','success');
-        }, error=>{console.log(error)})
+        }, error=>{console.error(error)})
       } 
     })
   }
