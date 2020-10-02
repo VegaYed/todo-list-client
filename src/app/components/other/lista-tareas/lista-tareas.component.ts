@@ -26,6 +26,7 @@ export class ListaTareasComponent implements OnInit {
       if(res.idCategoria){
         this.tareaService.getTareasCategoria(res.idCategoria).subscribe(resp=>{
           this.lista = resp;
+          console.log("mostrandoo...", this.lista);
         })
       }
     });
@@ -34,6 +35,7 @@ export class ListaTareasComponent implements OnInit {
   cargarTareas(){
     this.tareaService.getAll().subscribe(res=>{
       this.lista = res;
+      console.log(res);
     }, error=>{console.log(error)});
   }
   agregar($event){    // recibe la tarea nueva desde el componente Nueva tarea

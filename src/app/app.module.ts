@@ -29,7 +29,8 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
 
 import 'moment/locale/es';
 import { DialogCategoriasComponent } from './components/other/dialog-categorias/dialog-categorias.component';
-import { DialogEditTareaComponent } from './components/other/dialog-edit-tarea/dialog-edit-tarea.component'; // momentjs en español
+import { DialogEditTareaComponent } from './components/other/dialog-edit-tarea/dialog-edit-tarea.component';
+import { RegistroComponent } from './components/registro/registro.component'; // momentjs en español
 @NgModule({
   declarations: [
     AppComponent,
@@ -42,7 +43,8 @@ import { DialogEditTareaComponent } from './components/other/dialog-edit-tarea/d
     InicioComponent,
     FiltrosComponent,
     DialogCategoriasComponent,
-    DialogEditTareaComponent
+    DialogEditTareaComponent,
+    RegistroComponent
   ],
   imports: [
     BrowserModule,
