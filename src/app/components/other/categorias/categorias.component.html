@@ -5,6 +5,6 @@
     </div>
     <div class="category__list" *ngFor="let i of list">
         <a  class="category__button">{{i.categoria}}</a>
-        <button  *ngIf="isManaging" class="category__delete" mat-stroked-button color="primary" (click)="eliminar(i)">Del</button>
+        <button *ngIf="isManaging" class="category__delete" mat-stroked-button color="primary" (click)="eliminar(i)">Del</button>
     </div>
 </div>

@@ -27,12 +27,51 @@ export class CategoriasComponent implements OnInit {
   }
 
   agregar(){
+
+    Swal.fire({
+      title: 'Ingresa un nombre para agregar una nueva categoría',
+      icon: 'info',
+      showCancelButton: true,
+      input: 'text',
+      confirmButtonText: 'Crear categoría',
+      cancelButtonText: 'Cancelar',
+      inputValidator: (value) => {
+        if (!value) {
+          return '¡Debes ingresar un nombre!'
+        }
+      }
+    }).then(
+      (result) => {
+        if(result.value){
+          
+          let newCategoria: Categoria = {
+            categoria: result.value
+          }
+    
+          console.log('Nombre de la categoría -- ' + result.value)
+
+          this.categoryService.add(newCategoria).subscribe(
+            (res) => {
+              this.list.push(res);
+              Swal.fire('¡Categoria creada!','','success');
+            },
+            (error) => {
+              console.log(error);
+              Swal.fire('La categoría no ha podido ser creada. ¿Estás conectado a internet?','','error');
+            }
+          );
+        }
+      }
+    );
+
+    /*
     let newCategoria: Categoria = {
       categoria: 'Nueva'
     }
     this.categoryService.add(newCategoria).subscribe(res=>{
       this.list.push(res);
     })
+    */
   }
 
   eliminar(cat){
