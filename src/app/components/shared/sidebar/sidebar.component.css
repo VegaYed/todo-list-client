@@ -37,11 +37,9 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  background-color: #FADF63;
+  background-color: #35009e;
   -webkit-box-shadow: black 5px;
           box-shadow: black 5px;
-  border-top: 1px solid black;
-  border-bottom: 1px solid black;
   font-size: 1rem;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   color: white;
