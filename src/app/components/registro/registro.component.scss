@@ -1,3 +1,5 @@
+$color-text-register        : #B9BBBE;
+
 a:active{
     color: crimson;
 }
@@ -20,11 +22,11 @@ a:active{
     height: 100vh;
 }
 
-h1{
+h2{
     display: block;
     margin-top: 2.5%;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: #707070;
+    color: $color-text-register;
     text-transform: uppercase;
 }
 

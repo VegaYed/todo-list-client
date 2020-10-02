@@ -27,11 +27,11 @@ a:active {
   height: 100vh;
 }
 
-h1 {
+h2 {
   display: block;
   margin-top: 2.5%;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  color: #707070;
+  color: #B9BBBE;
   text-transform: uppercase;
 }
 

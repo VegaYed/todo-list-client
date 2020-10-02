@@ -34,3 +34,35 @@ $background-color-header        : #6256ba;
     font-size: 2em;
     color: hsl(0, 0%, 96%);
 }
+
+
+.logout{
+    display: flex;
+    flex-basis: 7.5%;
+    min-height: 30px;
+}
+
+.logout__link{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-decoration: none;
+    color: #B7AED2;
+    border-top: $exit-border-top;
+
+    &:hover{
+        transition: .5s;
+        border: hidden;
+        background-color: $exit-background-color--hover;
+        .logout__text{
+            transition: .8s;
+            color: $category-title-font-color;
+        }
+    }
+
+    &:not(:hover){
+        transition: .8s;
+    }
+}
