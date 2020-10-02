@@ -1,22 +1,41 @@
-.button-container{
-    display: flex;
-    flex-direction: column;
-    justify-items: center;
-    align-items: center;
-    width: 100%;
-    padding-top: .25em;
-    padding-bottom: .25em;
+.button-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  justify-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  padding-top: .25em;
+  padding-bottom: .25em;
 }
 
-.button{
-    display: flex;
-    align-items: center;
-    width: 80%;
-    height: 1.5em;
-    padding: .1em .5em;
-    margin: .25em auto;
-    border: 1.8px dashed #707070;
-    border-radius: .4em;
-    font-family: 'Segoe UI Bold', Tahoma, Geneva, Verdana, sans-serif;
-    text-decoration: none;
+.button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 80%;
+  height: 1.5em;
+  padding: .1em .5em;
+  margin: .25em auto;
+  border: 1.8px dashed #f04747;
+  border-radius: .4em;
+  font-family: 'Segoe UI Bold', Tahoma, Geneva, Verdana, sans-serif;
+  text-decoration: none;
+  color: #6E7279;
 }
+
+.button:hover {
+  color: #D7D5D9;
+  -webkit-transition: color .5s;
+  transition: color .5s;
+}
+/*# sourceMappingURL=filtros.component.css.map */

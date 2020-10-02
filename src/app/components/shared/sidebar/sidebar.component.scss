@@ -1,19 +1,32 @@
-$border-solid-1px : 1px solid black;
+$container-background               : #202225;
+
+$filter-item-border-color           : white;
+
+$category-title-background--hover   : #F04747;
+$category-title-background          : #36393F;
+$category-title-font-color          : #EDE7F6;
+
+$category-title-border: 1px solid inherit;
+$category-title-border-radius: 4px;
 
 @mixin style-title{
-    width: 100%;
+    width: 85%;
     min-height: 28px;
     // Box Model
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
+    padding-left: 1.5rem;
     // Background
-    background-color: #35009e;
+    background-color: $category-title-background;
+    
+    border: $category-title-border;
+    border-radius: $category-title-border-radius;
     box-shadow: black 5px;
     // DOM $Text
     font-size: 1rem;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: white;
+    color: $category-title-font-color;
 }
 
 .container{
@@ -21,6 +34,7 @@ $border-solid-1px : 1px solid black;
     width: 100%;
     display: flex;
     flex-direction: column;
+    background-color: $container-background;
 }
 
 [class^="section"]{
@@ -40,12 +54,13 @@ $border-solid-1px : 1px solid black;
 
     &:hover h2{
         transition-delay: .25s;
-        background-color: #419EF2;
+        background-color: $category-title-background--hover;
     }
 }
 
 .section-filters{
     flex-basis: 20%;
+    padding-top: .5rem;
 }
 
 .section-categories{
@@ -78,16 +93,16 @@ $border-solid-1px : 1px solid black;
     align-items: center;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     text-decoration: none;
-    color: hsl(0, 0%, 27%);
+    color: #B7AED2;
     border-top: 2px dashed #FF1654;
 
     &:hover{
         transition: .5s;
-        border-color: black;
+        border: hidden;
         background-color: #FF1654;
         .logout__text{
             transition: .8s;
-            color: white;
+            color: $category-title-font-color;
         }
     }
 
