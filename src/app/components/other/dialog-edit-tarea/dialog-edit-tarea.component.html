@@ -1,0 +1,11 @@
+<h1 mat-dialog-title>Editar Tarea</h1>
+<div mat-dialog-content>
+    <mat-form-field class="task__name">
+        <mat-label>Tarea</mat-label>
+        <input [(ngModel)]="data.tarea" matInput #message maxlength="50" placeholder="Nueva tarea">
+        <mat-hint align="end">{{message.value.length}} / 50</mat-hint>
+      </mat-form-field>
+</div>
+<div mat-dialog-actions>
+    <button mat-button [mat-dialog-close]="data" cdkFocusInitial>Confirmar</button>
+</div>

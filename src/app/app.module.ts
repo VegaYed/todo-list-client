@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { LOCALE_ID, NgModule } from '@angular/core';
 import {HttpClientModule} from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -23,9 +23,12 @@ import { MatNativeDateModule } from '@angular/material/core';
 import {MatIconModule} from '@angular/material/icon';
 import {MatTableModule} from '@angular/material/table';
 import { FormsModule } from '@angular/forms';
+import {MatDialogModule} from '@angular/material/dialog';
 /* ====== */
 
-
+import 'moment/locale/es';
+import { DialogCategoriasComponent } from './components/other/dialog-categorias/dialog-categorias.component';
+import { DialogEditTareaComponent } from './components/other/dialog-edit-tarea/dialog-edit-tarea.component'; // momentjs en español
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,13 +39,16 @@ import { FormsModule } from '@angular/forms';
     NuevaTareaComponent,
     ListaTareasComponent,
     InicioComponent,
-    FiltrosComponent
+    FiltrosComponent,
+    DialogCategoriasComponent,
+    DialogEditTareaComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
+    MomentModule,
     /*  Material*/
     BrowserAnimationsModule,
     MatInputModule,
@@ -53,9 +59,8 @@ import { FormsModule } from '@angular/forms';
     MatNativeDateModule,
     MatIconModule,
     MatTableModule,
+    MatDialogModule
     /* ==== */
-
-    MomentModule
   ],
   providers: [
     MatDatepickerModule,

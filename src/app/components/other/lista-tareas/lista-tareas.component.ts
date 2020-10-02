@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { TareaService } from 'src/app/services/tarea.service';
 import { Tarea } from 'src/app/shared/dto/Tarea';
 import Swal from 'sweetalert2';
+import { DialogEditTareaComponent } from '../dialog-edit-tarea/dialog-edit-tarea.component';
 
 @Component({
   selector: 'app-lista-tareas',
@@ -12,7 +14,7 @@ export class ListaTareasComponent implements OnInit {
 
   lista: Tarea[] =[];
 
-  constructor(private tareaService: TareaService) { }
+  constructor(private tareaService: TareaService, public dialog: MatDialog) { }
 
   ngOnInit(): void {
     this.cargarTareas();
@@ -25,7 +27,16 @@ export class ListaTareasComponent implements OnInit {
   }
   agregar($event){    // recibe la tarea nueva desde el componente Nueva tarea
     console.log("DESDE LISTAR", $event);
-    this.lista.push($event);  
+    let ntar= $event;
+    this.lista.push(ntar);  
+  }
+
+  editar(tarea){
+    const dial = this.dialog.open(DialogEditTareaComponent,{data: tarea});
+
+    dial.afterClosed().subscribe(res=>{
+      console.log("Luego de cerrar", res);
+    })
   }
 
   eliminar(t: Tarea){
