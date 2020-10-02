@@ -9,6 +9,9 @@ $category-title-font-color          : #EDE7F6;
 $category-title-border: 1px solid inherit;
 $category-title-border-radius: 4px;
 
+$exit-background-color--hover       : #4A418C;
+$exit-border-top                    : 2px dashed $exit-background-color--hover;
+
 @mixin style-title{
     width: 85%;
     min-height: 28px;
@@ -94,12 +97,12 @@ $category-title-border-radius: 4px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     text-decoration: none;
     color: #B7AED2;
-    border-top: 2px dashed #FF1654;
+    border-top: $exit-border-top;
 
     &:hover{
         transition: .5s;
         border: hidden;
-        background-color: #FF1654;
+        background-color: $exit-background-color--hover;
         .logout__text{
             transition: .8s;
             color: $category-title-font-color;

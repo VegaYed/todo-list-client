@@ -110,14 +110,14 @@
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   text-decoration: none;
   color: #B7AED2;
-  border-top: 2px dashed #FF1654;
+  border-top: 2px dashed #4A418C;
 }
 
 .logout__link:hover {
   -webkit-transition: .5s;
   transition: .5s;
   border: hidden;
-  background-color: #FF1654;
+  background-color: #4A418C;
 }
 
 .logout__link:hover .logout__text {

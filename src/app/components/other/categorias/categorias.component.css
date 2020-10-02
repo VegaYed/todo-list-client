@@ -46,7 +46,7 @@
       -ms-flex-pack: center;
           justify-content: center;
   width: 1em;
-  background-color: dodgerblue;
+  background-color: #4A418C;
 }
 
 .category__list {
@@ -71,14 +71,22 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  width: 60%;
+  width: 85%;
   height: 1.5em;
   padding: .1em .5em;
   margin: .25em auto;
-  border: 2px solid #b3b3b3;
+  border: 2px solid #2F3136;
   border-radius: .4em;
   font-family: 'Segoe UI Bold', Tahoma, Geneva, Verdana, sans-serif;
   text-decoration: none;
+  color: #B9BBBE;
+}
+
+.category__list .category__button:hover {
+  -webkit-transition: color .5s;
+  transition: color .5s;
+  color: white;
+  cursor: pointer;
 }
 
 .category__list .category__delete {

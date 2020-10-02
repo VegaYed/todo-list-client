@@ -1,5 +1,11 @@
 $button-action-color--add   : #40AD7B;
+$button-action-color--edit  : #4A418C;
 $button-action-font-color   : white;
+
+$button-item-border-color       : #2F3136;
+$button-item-font-color         : #B9BBBE;
+$button-item-font-color--hover  : white;
+
 .category{
     width: 100%;
     height: 100%;
@@ -30,7 +36,7 @@ $button-action-font-color   : white;
         align-content: center;
         justify-content: center;
         width: 1em;
-        background-color: dodgerblue;
+        background-color: $button-action-color--edit;
     }
 }
 
@@ -44,14 +50,21 @@ $button-action-font-color   : white;
     .category__button{
         display: inline-flex;
         align-items: center;
-        width: 60%;
+        width: 85%;
         height: 1.5em;
         padding: .1em .5em;
         margin: .25em auto;
-        border: 2px solid hsl(0, 0%, 70%);
+        border: 2px solid $button-item-border-color;
         border-radius: .4em;
         font-family: 'Segoe UI Bold', Tahoma, Geneva, Verdana, sans-serif;
         text-decoration: none;
+        color: $button-item-font-color;
+
+        &:hover{
+            transition: color .5s;
+            color: $button-item-font-color--hover;
+            cursor: pointer;
+        }
     }
 
     .category__delete{
