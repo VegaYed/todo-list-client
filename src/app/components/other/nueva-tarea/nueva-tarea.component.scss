@@ -1,8 +1,18 @@
+$background-color-button--add               : #43B581;
+$background-color-button--category-select   : #4A418C;
+$color-text--default:   #D7D5D9;
+
+*{
+    color: $color-text--default;
+}
+
 .nueva_tareas{
     display: flex;
     flex-direction: row;
     align-content: space-between;
     width: 100%;
+    border-bottom: 1px solid #F04747;
+    border-bottom-width: 50%;
 }
 
 .task__new{
@@ -27,4 +37,20 @@
     .task__date--pick{
         width: 95%;
     }
+}
+
+.button{
+    margin-left: .5rem;
+    margin-right: .5rem;
+    margin-top: 10px;
+    height: 3rem;
+    color: #FFFFFF;
+}
+
+.button__add{
+    background-color: $background-color-button--add;
+}
+
+.button__category-select{
+    background-color: $background-color-button--category-select;
 }

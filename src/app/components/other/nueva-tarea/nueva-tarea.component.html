@@ -3,7 +3,7 @@
     <mat-form-field class="task__name">
       <mat-label>Nueva Tarea</mat-label>
       <input [(ngModel)]="tarea.tarea" matInput #message maxlength="50" placeholder="Nueva tarea">
-      <mat-hint align="end">{{message.value.length}} / 50</mat-hint>
+      <mat-hint style="color: white;" align="end">{{message.value.length}} / 50</mat-hint>
     </mat-form-field>
   </div>
   <mat-chip-list class="example-chip"cdkDropList cdkDropListOrientation="horizontal">
@@ -20,6 +20,6 @@
     </mat-form-field>
   </div>
 
-  <button mat-stroked-button color="primary" (click)="seleccionaCategorias()" >Seleccionar Categorias</button>
-  <button mat-stroked-button color="primary" (click)="agregar()">Agregar</button>
+  <button class="button button__category-select" mat-stroked-button color="primary" (click)="seleccionaCategorias()" >Seleccionar Categorias</button>
+  <button class="button button__add" mat-stroked-button color="primary" (click)="agregar()">Agregar</button>
 </div>

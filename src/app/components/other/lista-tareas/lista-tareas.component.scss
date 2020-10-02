@@ -1,3 +1,9 @@
+$color-text--default:   #D7D5D9;
+
+*{
+    color: $color-text--default;
+}
+
 .container{
     display: flex;
     flex-direction: column;

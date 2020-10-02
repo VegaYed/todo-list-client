@@ -12,11 +12,13 @@ export class AuthGuard implements CanActivate {
 
   constructor(private userSevice: UsuarioService, private router: Router){}
   canActivate(): boolean {
+
     if(!this.userSevice.isLogged()){ // si existe token
       Swal.fire('No estas loggeado!!', '', 'error');
       this.router.navigate(['/']);
     }
     return this.userSevice.isLogged();
+
   }
   
 }

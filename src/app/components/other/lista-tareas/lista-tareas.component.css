@@ -1,3 +1,7 @@
+* {
+  color: #D7D5D9;
+}
+
 .container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -49,8 +53,5 @@
 
 table {
   margin-top: 1em;
-}
-.vencida{
-  color: red;
 }
 /*# sourceMappingURL=lista-tareas.component.css.map */
